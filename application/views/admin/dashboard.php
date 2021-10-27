@@ -15,21 +15,6 @@
 						echo '<div class="success col-md-8">';
 						echo '<p>' . $success . '</p>';
 						echo '</div>';
-						
-						//traditional video play - less than HTML5
-						// echo '<object width="500" height="500">
-						//         <param name="src" value="' . $video_path . '/' . $video_name . '">
-						//         <param name="autoplay" value="false">
-						//         <param name="controller" value="true">
-						//         <param name="bgcolor" value="#333333">
-						//         <embed type="' . $video_type . '" src="' . $video_path . '/' . $video_name . '" autostart="false" loop="false" width="338" height="300" controller="true" bgcolor="#333333"></embed>
-						//      </object>';
-
-						// //HTML5 video play
-						// echo '<video width="320" height="240" controls>
-						//   <source src="' . $video_path . '/' . $video_name . '" type="' . $video_type . '">
-						//   Your browser does not support the video tag.
-						//   </video>';
 					}
 					if (isset($errors) && strlen($errors)) {
 						echo '<div class="error col-md-8">';
@@ -40,12 +25,13 @@
 						echo validation_errors('<div class="error">', '</div>');
 					}
                 ?>
+				<img id="loading" class="loading" src="<?=base_url()?>assets/img/loading.gif"/>
                 <?php
 					$attributes = array('name' => 'video_upload', 'id' => 'video_upload');
 					echo form_open_multipart($this->uri->uri_string(), $attributes);
                 ?>
                 <p><input name="video_name" id="video_name" readonly="readonly" type="file" /></p>
-                <p><input name="video_upload" value="Upload Video" type="submit" /></p>
+                <p><input id="btnSubmit" name="video_upload" value="Upload Video" type="submit" /></p>
                 <?php
 					echo form_close();
                 ?>

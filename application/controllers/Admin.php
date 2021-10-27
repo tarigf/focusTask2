@@ -1,4 +1,6 @@
 <?php
+ini_set('max_execution_time', '300');
+
 defined('BASEPATH') OR exit('no direct script access allowed');
 
 class Admin extends CI_Controller{
@@ -144,6 +146,8 @@ class Admin extends CI_Controller{
     }
 
     public function convert($file_name,$newName){
+
+        
         //scale=-1:720
         //scale=640:480
 	    //shell_exec("ffmpeg -i uploads/".$file_name." -vf scale=720:-1  uploads/".$newName."-720.mp4 &");

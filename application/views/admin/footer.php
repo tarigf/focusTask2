@@ -59,6 +59,10 @@
 
     $(document).ready(function(){
       
+    $('#btnSubmit').on('click',function(){
+      //alert("sumbit");
+      document.getElementById('loading').style.display ="block";
+    });
 
     $('.qualitypick').on('change',function(){ 
 

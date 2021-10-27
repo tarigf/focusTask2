@@ -77,6 +77,10 @@
   background-color: #000; color: white;
   border-style: inset;
 }
+.loading{
+  display:none;
+  width: 6%;
+}
 </style>
 
   </head>
